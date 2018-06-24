@@ -1,0 +1,43 @@
+.card-style {
+    width: 380px;
+    margin: 50px auto;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .seatStyle {   
+    background-color: green;
+    color: green;
+    text-align: center;
+    height: 15px;
+    width: 15px;  
+    margin: 10px; 
+    float:left; 
+    position:relative;
+}
+.seatBookedStyle {   
+    background-color: red;
+    color: red;
+    text-align: center;
+    height: 15px;
+    width: 15px;  
+    margin: 10px; 
+    float:left; 
+    position:relative; 
+}
+.seatOtherBookedStyle {   
+  background-color:grey;
+  color: grey;
+  text-align: center;
+  height: 15px;
+  width: 15px;  
+  margin: 10px; 
+  float:left; 
+  position:relative; 
+}

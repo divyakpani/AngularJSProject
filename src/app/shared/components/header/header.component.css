@@ -1,0 +1,18 @@
+.header {
+    position: relative;
+    left: 0;
+    top: 0;
+    height:100px;
+    width: 100%;
+    background-color: rgb(13, 13, 82);
+    color: white;
+    font-size: 48;
+    text-align: center;
+
+}
+.headTextStyle
+{
+    top: 30;
+    align-content: right;
+    padding-top: 35px;
+}

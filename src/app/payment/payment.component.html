@@ -1,0 +1,38 @@
+<div>
+
+</div>
+<h2>Payment Details</h2><br>
+<p>Seats Selected : {{SeatCount}}</p>
+<!-- <p>Amount: {{TotalAmount}}</p> -->
+<p>Amount: {{SeatCount|billcalulator:SeatCharge:2000}}</p>
+<p>GST %: {{GST}}</p>
+<p>Net Amount: {{SeatCount|billwithGSTcalculator:SeatCharge:GSTPercentage}}</p>
+<br>
+Payment Option : 
+<!-- <select [(ngModel)]="PaymentOpt">
+    <option [value]=1 >Inernet Banking</option>
+    <option [value]=2 >Credit Card</option>
+    <option [value]=3 >COD</option>
+</select> -->
+<mat-form-field>
+        <mat-select placeholder="Payment method" [(ngModel)]="PaymentOpt">
+          <mat-option *ngFor="let food of [{value: '1', viewValue: 'Internet banking'},
+          {value: '2', viewValue: 'Credit card'},
+          {value: '3', viewValue: 'COD'}]" [value]="food.value">
+          {{ food.viewValue }}
+          </mat-option>
+          ] 
+        </mat-select>
+</mat-form-field>
+<div [ngSwitch]="PaymentOpt">
+    <div *ngSwitchCase="1">
+      <app-internetbanking [PayableAmount]="TotalWithGst" (eve)="GoToLogin()"></app-internetbanking>
+    </div>
+    <div *ngSwitchCase="2">
+            <app-creditcard [PayableAmount]="TotalWithGst" (eve)="GoToLogin()"></app-creditcard>
+    </div>
+    <div *ngSwitchDefault>
+            <app-cod [PayableAmount]="TotalWithGst" (eve)="GoToLogin()"></app-cod>
+    </div>
+</div>
+

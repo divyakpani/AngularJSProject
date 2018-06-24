@@ -1,0 +1,78 @@
+
+    
+      <!-- <mat-card class="card-style">   
+        From <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Input" [(ngModel)]="from">
+            </mat-form-field><br><br>
+        To <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Input" [(ngModel)]="to">
+            </mat-form-field><br><br>
+        Date <mat-form-field>
+                <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field><br><br>   
+    <button (click)='SearchResult()'>Search</button> 
+    </mat-card>-->
+
+    <mat-tab-group>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+            Search
+          </ng-template>
+         <!--Search Start here--> 
+
+         <mat-card class="card-style">   
+            From <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Input" [(ngModel)]="from">
+                </mat-form-field><br><br>
+            To <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Input" [(ngModel)]="to">
+                </mat-form-field><br><br>
+            Date <mat-form-field>
+                    <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field><br><br>   
+            <button (click)='SearchResult()'>Search</button>
+         </mat-card>
+         <!--Search End Here-->
+        </mat-tab>
+      
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+           Cancel Booking
+          </ng-template>
+          <!--Cancelation start here-->
+
+          <div *ngFor="let bus of businfo">
+            <br>
+              <h4>{{bus.id}} {{bus.name}}</h4>
+              <!-- <p>{{bus.name}}</p> -->
+              <p>{{bus.time}}</p>                    
+                <div *ngFor="let seat of bus.seats">
+                  <div *ngIf="seat.bookStatus==0">
+                    <div class="seatStyle">{{seat.id}}</div>                   
+                  </div>
+                  <div *ngIf="seat.bookStatus==1">
+                      <div *ngIf="seat.userId==userId">
+                          <div class="seatBookedStyle" (click)="(CancelBook(bus.id,seat.id,seat.userId))">{{seat.id}}</div>
+                      </div>
+                      <div *ngIf="seat.userId!=userId">
+                          <div class="seatOtherBookedStyle">{{seat.id}}</div>
+                      </div>                     
+                  </div>                   
+              </div> 
+              <br>
+          </div>
+
+          <!--Cancelation end here-->
+            
+        </mat-tab>       
+      </mat-tab-group>
+    
+    
+    
+    

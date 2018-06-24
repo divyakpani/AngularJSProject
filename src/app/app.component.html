@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div>
+   <app-alert></app-alert>
+  <!-- <app-lifecycle></app-lifecycle>  -->
+  <!-- <router-outlet></router-outlet> -->
+ <div style="padding: 0px;">
+    <!-- <h1>Angular Material 2 Tab Example using md-tab-nav-bar and md-tab-link.</h1> -->
+    <div class="row">
+      <div class="col-lg-8"></div>
+      <div class="col-lg-4">
+      <nav md-tab-nav-bar >
+          <a md-tab-link
+            *ngFor="let routeLink of routeLinks; let i = index;"
+            [routerLink]="routeLink.link"
+            routerLinkActive="mat-tab-link-active"
+            #rla="routerLinkActive"                  
+            (click)="activeLinkIndex = i"
+            [routerLinkActiveOptions]="{exact: true}"
+          >
+              {{routeLink.label}}
+          </a>
+      </nav>
+    </div>
+    </div>
+<router-outlet></router-outlet>
+</div> 
+
+</div>
+<app-footer></app-footer>

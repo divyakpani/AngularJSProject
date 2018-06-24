@@ -1,0 +1,29 @@
+.seatStyle {   
+    background-color: green;
+    color: green;
+    text-align: center;
+    height: 15px;
+    width: 15px;  
+    margin: 10px; 
+    float:left; 
+    position:relative;
+}
+.seatBookedStyle {   
+    background-color: red;
+    color: red;
+    text-align: center;
+    height: 15px;
+    width: 15px;  
+    margin: 10px; 
+    float:left; 
+    position:relative; 
+}
+.example-headers-align .mat-expansion-panel-header-title, 
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}

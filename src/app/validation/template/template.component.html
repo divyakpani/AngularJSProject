@@ -1,0 +1,13 @@
+<form #eventForm="ngForm" (ngSubmit)="savedata(eventForm)">
+    Name:<input type="text" (ngModel)="name" name="name" required><br><br>
+    
+    <em  style="color:red" *ngIf="eventForm.controls.name?.invalid && eventForm.controls.name?.touched">Name Required</em><br>
+    
+    email:<input type="email" (ngModel)="email" name="email" email required><br>
+    
+    
+    <em *ngIf="">Email required</em>
+    
+    <input [disabled]="eventForm.invalid" type="submit">
+    </form>
+    

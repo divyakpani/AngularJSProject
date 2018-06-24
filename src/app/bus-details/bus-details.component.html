@@ -1,0 +1,93 @@
+<!-- <div *ngFor="let bus of businfo">
+  <h2>{{bus.id}}</h2>
+  <p>{{bus.name}}</p>
+  <p>{{bus.time}}</p>
+  <button (click)='ShowSeats()'>Show Seats</button>
+  <br>
+  <br>
+  <div *ngIf="divSeats">
+    <div *ngFor="let seat of bus.seats">
+      <div *ngIf="seat.bookStatus==0">
+        <div class="seatStyle" (click)="(SeatBook(bus.id,seat.id))">{{seat.id}}</div>
+        <br>
+      </div>
+      <div *ngIf="seat.bookStatus==1">
+          <div class="seatBookedStyle" (click)="(CancelBook(bus.id,seat.id,seat.userId))">{{seat.id}}</div>
+          <br>
+      </div> 
+  </div>
+  <div>
+    <button (click)='GoPayment()'>Payment</button>
+  </div>
+</div> -->
+
+<mat-accordion>
+  <div *ngFor="let bus of businfo">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+          {{bus.id}}
+      </mat-panel-title>
+      <mat-panel-description>
+         {{bus.name}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <!-- <mat-form-field> -->
+       Time :  {{bus.time}}
+    <!-- </mat-form-field> -->
+
+     <!--<mat-form-field>-->
+        <!-- <button (click)='ShowSeats()'>Show Seats</button> -->
+        <!-- <div *ngIf="divSeats"> -->
+            <div>
+            <div *ngFor="let seat of bus.seats">
+              <div *ngIf="seat.bookStatus==0">
+                <div class="seatStyle" (click)="(SeatBook(bus.id,seat.id))">{{seat.id}}</div>
+                <!-- <br> -->
+              </div>
+              <div *ngIf="seat.bookStatus==1">
+                  <div class="seatBookedStyle" (click)="(CancelBook(bus.id,seat.id,seat.userId))">{{seat.id}}</div>
+                  <!-- <br> -->
+              </div>              
+            </div> 
+            <button (click)='GoPayment()'>Payment</button>
+          </div> 
+          
+      <!--<input matInput placeholder="Age">
+    </mat-form-field> -->
+  </mat-expansion-panel>
+  </div>  
+</mat-accordion>
+<!-- <mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Personal data
+      </mat-panel-title>
+      <mat-panel-description>
+        Type your name and age
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-form-field>
+      <input matInput placeholder="First name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Age">
+    </mat-form-field>
+  </mat-expansion-panel>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Self aware panel
+      </mat-panel-title>
+      <mat-panel-description>
+        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>I'm visible because I am open</p>
+  </mat-expansion-panel>
+</mat-accordion> -->
